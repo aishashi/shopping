@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>product</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+	  <style>
+	  h1{
+	    font-size:30px;
+		color:Navy;
+		font-weight:bold;
+		text-align:center;
+		font-family:Times New Roman;
+	   }
+	   
+	   .checked{
+	   color:orange;
+	   }
+	   
+	   table {
+	   border-collapse: separate;
+	   border-spacing: 50px 0;
+			}
+
+	 td {
+	   padding: 10px 0;
+	   }
+	</style>
+ </head>
+  
+<body >
+
+  <div class="alert alert-info">
+	<h1>Furniture</h1>
+  </div>
+  
+  <div class="container-fluid text-center">
+  <div class="row content">
+	<br/><br/><br/>
+	<div class="col-lg-12">
+	<table ng-controller="ProductContoller" >
+	 <tr>
+		<th>Product Image</th>
+		<th>Product Description</th>
+		<th>Product Purchase</th>
+	 </tr>
+	<tr ng-repeat = "x in products" >
+	 <td>
+		 <figure>
+		 <img src={{x.image}}>
+		 <figcaption><br/>{{x.name}}</figcaption>
+		 </figure>
+	 </td>
+	 <td>{{x.desc}}<br/><br/><p>Rating</p>
+	   <span class="fa fa-star checked"></span>
+	   <span class="fa fa-star checked"></span>
+	   <span class="fa fa-star checked"></span>
+	   <span class="fa fa-star "></span>
+	   <span class="fa fa-star "></span>
+	 </td>
+	  <td><div class="form-group">
+      <label for="quantity">Enter number of items</label>
+      <input type="number" class="form-control" id="quantity"  name="quantity"></div><br/>
+	  <button type="submit" class="btn btn-primary">Checkout</button>
+      </td>
+	 </tr>
+	 </table>
+	 </div>
+	 </div>
+	 </div>
+</body>
+</html>
